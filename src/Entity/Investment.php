@@ -3,84 +3,126 @@
 namespace App\Entity;
 
 use App\Repository\InvestmentRepository;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Annotation\ApiFilter;
-use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 
-#[ORM\Entity(repositoryClass: InvestmentRepository::class)]
-#[ApiResource(
-    attributes: ["pagination_enabled" => false],
-    collectionOperations: [
-        'get' => ['method' => 'get'],
-        'post'
-    ],
-    itemOperations: [
-        'get' => ['method' => 'get']
-    ],
-  ), ApiFilter(SearchFilter::class , properties: ['ville'=> 'exact', 'etat_d_avancement' => 'exact'])
-]
+/**
+ * @ORM\Entity(repositoryClass=InvestmentRepository::class)
+ * 
+ * @ApiResource(
+ *  paginationEnabled=false,
+ *  collectionOperations= {
+ *      "get",
+ *      "post"
+ *  },
+ *  itemOperations={
+ *      "get"
+ *  }
+ * )
+ * 
+ * @ApiFilter(SearchFilter::class , properties= {"ville":"exact", "etat_d_avancement" :"exact"})
+
+ */
 
 class Investment
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column(type: 'integer')]
+    /**
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
     private $id;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    /**
+     * @ORM\Column(type="string", length= 255, nullable= true)
+     */
     private $titreoperation;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    /**
+     * @ORM\Column(type="string", length= 255, nullable= true)
+     */
     private $entreprise;
 
-
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    /**
+     * @ORM\Column(type="string", length= 255, nullable= true)
+     */
     private $ville;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    /**
+     * @ORM\Column(type="string", length= 255, nullable= true)
+     */
     private $mandataire;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    /**
+     * @ORM\Column(type="string", length= 255, nullable= true)
+     */
     private $ppi;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    /**
+     * @ORM\Column(type="string", length= 255, nullable= true)
+     */
     private $lycee;
 
-    #[ORM\Column(type: 'date', nullable: true)]
+    /**
+     * @ORM\Column(type="date")
+     */
     private $notification_du_marche;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    /**
+     * @ORM\Column(type="string", length= 255, nullable= true)
+     */
     private $codeuai;
 
-    #[ORM\Column(type: 'float', nullable: true)]
+    /**
+     * @ORM\Column(type="float")
+     */
     private $longitude;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    /**
+     * @ORM\Column(type="string", length= 255, nullable= true)
+     */
     private $etat_d_avancement;
 
-    #[ORM\Column(type: 'float', nullable: true)]
+    /**
+     * @ORM\Column(type="float")
+     */
     private $montant_des_ap_votes_en_meu;
 
-    #[ORM\Column(type: 'date', nullable: true)]
+    /**
+     * @ORM\Column(type="date")
+     */
     private $cao_attribution;
 
-    #[ORM\Column(type: 'float', nullable: true)]
+    /**
+     * @ORM\Column(type="float")
+     */
     private $latitude;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    /**
+     * @ORM\Column(type="string", length= 255, nullable= true)
+     */
     private $maitrise_d_oeuvre;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    /**
+     * @ORM\Column(type="string", length= 255, nullable= true)
+     */
     private $mode_de_devolution;
 
-    #[ORM\Column(type: 'string', length: 4, nullable: true)]
+    /**
+     * @ORM\Column(type="string", length= 4, nullable= true)
+     */
     private $annee_d_individualisation;
 
-    #[ORM\Column(type: 'float', nullable: true)]
+    /**
+     * @ORM\Column(type="float")
+     */
     private $enveloppe_prev_en_meu;
 
-    #[ORM\Column(type: 'string', length: 4, nullable: true)]
+    /**
+     * @ORM\Column(type="string", length= 4, nullable= true)
+     */
     private $annee_de_livraison;
 
     public function getId(): ?int
