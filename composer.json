@@ -76,7 +76,7 @@
         ],
         "compile": [
             "composer update",
-            "php bin/console --no-interaction doctrine:migrations:migrate"
+            "php bin/console --no-interaction doctrine:schema:update"
         ]
     },
     "conflict": {
