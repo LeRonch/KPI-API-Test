@@ -76,7 +76,7 @@
         ],
         "compile": [
             "composer update",
-            "php bin/console --no-interaction doctrine:schema:update"
+            "php bin/console --no-interaction doctrine:schema:update --force"
         ]
     },
     "conflict": {
