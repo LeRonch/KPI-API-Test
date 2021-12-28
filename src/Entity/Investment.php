@@ -3,10 +3,10 @@
 namespace App\Entity;
 
 use App\Repository\InvestmentRepository;
-use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 
 /**
  * @ORM\Entity(repositoryClass=InvestmentRepository::class)
@@ -22,7 +22,7 @@ use ApiPlatform\Core\Annotation\ApiFilter;
  *  }
  * )
  * 
- * @ApiFilter(SearchFilter::class, properties={"ville":"exact", "etat_d_avancement":"partial"})
+ * @ApiFilter(SearchFilter::class, properties={"ville":"partial", "lycee":"partial", "mandataire":"partial"})
  *
  */
 
