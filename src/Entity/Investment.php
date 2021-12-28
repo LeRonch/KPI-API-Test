@@ -22,7 +22,7 @@ use ApiPlatform\Core\Annotation\ApiFilter;
  *  }
  * )
  * 
- * @ApiFilter(SearchFilter::class , properties= {"ville":"exact", "etat_d_avancement" :"exact"})
+ * @ApiFilter(SearchFilter::class , properties= {"ville":"exact", "etat_d_avancement":"exact"})
 
  */
 
