@@ -66,7 +66,7 @@ class Investment
     private $lycee;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date", nullable= true)
      */
     private $notification_du_marche;
 
