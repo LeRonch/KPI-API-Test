@@ -76,7 +76,7 @@ class Investment
     private $codeuai;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="float", nullable= true)
      */
     private $longitude;
 
@@ -86,17 +86,17 @@ class Investment
     private $etat_d_avancement;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="float", nullable= true)
      */
     private $montant_des_ap_votes_en_meu;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date" , nullable= true)
      */
     private $cao_attribution;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="float", nullable= true)
      */
     private $latitude;
 
@@ -116,7 +116,7 @@ class Investment
     private $annee_d_individualisation;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="float", nullable= true)
      */
     private $enveloppe_prev_en_meu;
 
